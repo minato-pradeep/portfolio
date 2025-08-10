@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pradeep Chandran</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ...existing custom styles... */
+        body {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ff 100%);
+        }
+        .navbar {
+            box-shadow: 0 4px 24px rgba(99,102,241,0.08);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            color: #6366f1 !important;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: #06b6d4 !important;
+            border-bottom: 2px solid #06b6d4;
+            transition: border 0.2s;
+        }
+        .hero-section {
+            background: linear-gradient(90deg, #6366f1 60%, #06b6d4 100%);
+            color: #fff;
+            border-radius: 0 0 2rem 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+            padding: 5rem 0 3rem 0;
+        }
+        .hero-img {
+            width: 220px;
+            height: 220px;
+            background: url('https://octodex.github.com/images/spidertocat.png') center/contain no-repeat;
+            border-radius: 50%;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+            border: 8px solid #8a99ff;
+            margin: auto;
+        }
+        .btn-accent {
+            background: #06b6d4;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 1rem;
+            box-shadow: 0 4px 24px rgba(6,182,212,0.12);
+        }
+        .btn-accent:hover {
+            background: #0ea5e9;
+            color: #fff;
+        }
+        .card {
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px rgba(99,102,241,0.10);
+            border: none;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-8px) scale(1.03);
+            border: 2px solid #06b6d4;
+        }
+        .card-title {
+            color: #6366f1;
+            font-weight: 700;
+        }
+        .skill-badge {
+            background: #fff;
+            color: #6366f1;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 24px rgba(99,102,241,0.08);
+            padding: 1rem 2rem;
+            margin: 0.5rem;
+            border: 2px solid #06b6d4;
+            transition: background 0.2s, color 0.2s;
+        }
+        .skill-badge:hover {
+            background: #06b6d4;
+            color: #fff;
+        }
+        .contact-section {
+            background: #fff;
+            border-radius: 2rem;
+            box-shadow: 0 8px 32px rgba(99,102,241,0.10);
+            padding: 2rem;
+            max-width: 500px;
+            margin: auto;
+        }
+        footer {
+            background: #6366f1;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            border-radius: 2rem 2rem 0 0;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <h1 class="display-4 fw-bold mb-3">
+                        Hi, I'm <span id="heroName" style="opacity:0;">Pradeep C</span>
+                    </h1>
+                    <p class="lead mb-4">Full Stack PHP Developer.</p>
+                    <a href="#projects" class="btn btn-accent btn-lg">View Projects</a>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <div class="hero-img"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Me Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card p-4">
+                        <h3 class="card-title mb-3">Education</h3>
+                        <ul class="list-unstyled mb-3">
+                            <li><strong>Degree:</strong> Bachelor of Engineering in Computer Science</li>
+                            <li><strong>University:</strong>  Anna University</li>
+                            <li><strong>Year:</strong> 2023 - 2026</li>
+                           <!-- <li><strong>CGPA:</strong> 8.5</li>-->
+                        </ul>
+                        <h3 class="card-title mb-3">About</h3>
+                        <p>
+                        I have a good understanding of Agile methodology and CI/CD pipelines, which helps me work well in team
+                         environments. I am good at handling clients and communicating their needs clearly throughout projects. I use AI tools
+                          in my projects to improve features and automation. I have solid knowledge of programming languages and
+                          frameworks, which enables me to develop reliable and efficient applications. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">Skills</h2>
+            <div class="d-flex flex-wrap justify-content-center">
+                <span class="skill-badge">HTML5</span>
+                <span class="skill-badge">CSS3</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">Jquery</span>
+                <span class="skill-badge">Php</span>
+                <span class="skill-badge">Codeigniter</span>
+                <span class="skill-badge">Mysql</span>
+            </div>
+        </div>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">Projects</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title mb-2">jewellery Shop Application</h3>
+                            <p class="card-text mb-3">An e-jewellery shop billing application helps manage product catalogs, track inventory, and generate invoices for gold, silver, diamond, and other jewellery sales.</p>
+                            <a href="#" class="btn btn-accent mt-auto">Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title mb-2"> Business website</h3>
+                            <p class="card-text mb-3">A business website is an online platform that represents a company or brand, showcasing its products, services, contact details, and other essential information. It helps build credibility, reach more customers, and serve as a central hub for marketing, sales, and customer engagement.
+                            </p>
+                            <a href="#" class="btn btn-accent mt-auto">Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title mb-2">Blue Star AC billing application</h3>
+                            <p class="card-text mb-3">A Blue Star AC billing application is used by dealers and retailers to quickly generate invoices for air conditioner sales, including model details, pricing, GST, and installation charges.</p>
+                            <a href="#" class="btn btn-accent mt-auto">Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Resume Section -->
+    <section id="resume" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4 fw-bold">View My Resume</h2>
+            <a href="pradeep_resume.pdf"  class="btn btn-accent btn-lg">View Resume</a>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">Contact</h2>
+            <div class="contact-section">
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-2">Contact Details</h5>
+                    <ul class="list-unstyled">
+                        <li><strong>Email:</strong>  pradeeppradeep14912@gmail.com</li>
+                        <li><strong>Phone:</strong> +91 9791805077</li>
+                        <li><strong>Location:</strong> Erode,<br> Tamilnadu,<br> India</li>
+                        <li><strong>Insta Id:</strong> <a href="https://www.instagram.com/pradeep_namikaze/?next=%2F">pradeep_namikaze</a></li>
+                    </ul>
+                </div>
+                <form id="contactForm">
+                    <div class="mb-3">
+                        <input type="text" class="form-control form-control-lg" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control form-control-lg" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control form-control-lg" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-accent btn-lg w-100">Send</button>
+                </form>
+                <div id="formMessage" class="mt-3"></div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 pradeep_namikaze. All rights reserved.</p>
+    </footer>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

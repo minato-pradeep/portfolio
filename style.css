@@ -1,0 +1,56 @@
+/* No changes needed. Keep your existing advanced style. */
+:root {
+    --primary: #6366f1;
+    --secondary: #f3f4f6;
+    --accent: #06b6d4;
+    --dark: #18181b;
+    --glass: rgba(255,255,255,0.7);
+    --radius: 16px;
+    --shadow: 0 8px 32px rgba(0,0,0,0.12);
+    --nav-height: 70px;
+    --transition: 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, var(--secondary) 0%, #e0e7ff 100%); color: var(--dark); margin: 0; min-height: 100vh; }
+nav { height: var(--nav-height); background: var(--primary); color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; }
+nav .logo { font-size: 2rem; font-weight: bold; letter-spacing: 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+nav ul { list-style: none; display: flex; gap: 2rem; position: relative; }
+nav ul li { position: relative; }
+nav ul li a { color: #fff; text-decoration: none; font-weight: 500; font-size: 1.1rem; padding: 8px 0; transition: color var(--transition); position: relative; }
+nav ul li a::after { content: ''; display: block; height: 3px; width: 0; background: var(--accent); border-radius: 2px; position: absolute; left: 0; bottom: -4px; transition: width var(--transition); }
+nav ul li a:hover, nav ul li a.active { color: var(--accent); }
+nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
+.hero-section { display: flex; align-items: center; justify-content: space-between; padding: 5rem 2rem 3rem 2rem; background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%); color: #fff; min-height: 60vh; border-radius: 0 0 var(--radius) var(--radius); box-shadow: var(--shadow); position: relative; overflow: hidden; }
+.hero-content { max-width: 600px; z-index: 2; }
+.hero-content h1 { font-size: 3rem; margin-bottom: 1rem; font-weight: 800; letter-spacing: 1px; text-shadow: 0 2px 12px rgba(0,0,0,0.12); animation: fadeInDown 1s; }
+.hero-content p { font-size: 1.3rem; margin-bottom: 2rem; animation: fadeInUp 1.2s; }
+.hero-img { width: 240px; height: 240px; background: url('https://octodex.github.com/images/spidertocat.png') center/cover no-repeat; border-radius: 50%; box-shadow: var(--shadow); border: 8px solid var(--accent); animation: float 3s infinite ease-in-out; }
+@keyframes float { 0%, 100% { transform: translateY(0);} 50% { transform: translateY(-20px);} }
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-40px);} to { opacity: 1; transform: translateY(0);} }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(40px);} to { opacity: 1; transform: translateY(0);} }
+.btn { background: var(--accent); color: #fff; padding: 0.8rem 2rem; border: none; border-radius: var(--radius); font-weight: bold; cursor: pointer; text-decoration: none; font-size: 1.1rem; box-shadow: var(--shadow); transition: background var(--transition), transform var(--transition); position: relative; overflow: hidden; }
+.btn:hover { background: #0ea5e9; transform: scale(1.05); }
+section { padding: 4rem 2rem; max-width: 1200px; margin: auto; }
+h2 { font-size: 2.3rem; margin-bottom: 2.5rem; color: var(--primary); text-align: center; font-weight: 700; letter-spacing: 1px; }
+.skills-list { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
+.skill { background: var(--glass); color: var(--primary); padding: 1.2rem 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow); font-weight: 700; font-size: 1.2rem; backdrop-filter: blur(8px); border: 2px solid var(--accent); transition: transform var(--transition), background var(--transition), color var(--transition); cursor: pointer; }
+.skill:hover { transform: scale(1.12) rotate(-2deg); background: var(--accent); color: #fff; }
+.projects-list { display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center; }
+.project-card { background: var(--glass); border-radius: var(--radius); box-shadow: var(--shadow); padding: 2.5rem 2rem; max-width: 340px; flex: 1 1 320px; display: flex; flex-direction: column; align-items: flex-start; transition: transform var(--transition), border var(--transition), background var(--transition); border: 2px solid transparent; backdrop-filter: blur(12px); position: relative; overflow: hidden; }
+.project-card::before { content: ''; position: absolute; top: -60px; right: -60px; width: 120px; height: 120px; background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%); opacity: 0.15; border-radius: 50%; z-index: 0; }
+.project-card:hover { transform: translateY(-12px) scale(1.04); border: 2px solid var(--accent); background: #fff; }
+.project-card h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.3rem; font-weight: 700; z-index: 1; }
+.project-card p { margin-bottom: 1.5rem; z-index: 1; }
+.project-card .btn { align-self: flex-end; z-index: 1; }
+#contact form { display: flex; flex-direction: column; gap: 1.2rem; max-width: 420px; margin: 0 auto; background: var(--glass); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow); backdrop-filter: blur(8px); }
+#contact input, #contact textarea { padding: 1rem; border-radius: var(--radius); border: 1.5px solid var(--primary); font-size: 1.1rem; resize: none; background: #fff; transition: border var(--transition); }
+#contact input:focus, #contact textarea:focus { border: 2px solid var(--accent); outline: none; }
+#contact textarea { min-height: 110px; }
+#formMessage { text-align: center; margin-top: 1rem; font-weight: bold; color: var(--primary); font-size: 1.1rem; }
+footer { background: var(--primary); color: #fff; text-align: center; padding: 1.5rem 0; border-radius: var(--radius) var(--radius) 0 0; margin-top: 2rem; font-size: 1.1rem; letter-spacing: 1px; }
+@media (max-width: 1000px) { #hero { flex-direction: column; text-align: center; gap: 2rem; padding: 4rem 1rem 2rem 1rem; } .hero-img { margin: 0 auto; } .projects-list { flex-direction: column; align-items: center; } }
+@media (max-width: 700px) { nav { flex-direction: column; gap: 1rem; padding: 0 1rem; height: auto; } section { padding: 2.5rem 1rem; } .skill, .project-card { padding: 1rem; } .hero-content h1 { font-size: 2.1rem; } h2 { font-size: 1.5rem; } }
+@media (max-width: 500px) { .hero-img { width: 140px; height: 140px; } .skills-list { gap: 0.7rem; } .projects-list { gap: 1rem; } #contact form { padding: 1rem; } }
+body::-webkit-scrollbar { width: 8px; background: var(--secondary); }
+body::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 8px; }
